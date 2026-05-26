@@ -1,0 +1,25 @@
+$TTL 1W
+@       IN SOA  bastion.ocp.lab. root.ocp.lab. (
+                        2026052401 ; serial
+                        3H         ; refresh
+                        30M        ; retry
+                        2W         ; expiry
+                        1W )       ; minimum
+
+        IN NS   bastion.ocp.lab.
+
+bastion        IN A    192.168.0.17
+
+api             IN A    192.168.0.17
+api-int         IN A    192.168.0.17
+
+*.apps          IN A    192.168.0.17
+
+boostrap	IN A	192.168.0.20
+
+master0         IN A    192.168.0.21
+master1         IN A    192.168.0.22
+master2         IN A    192.168.0.23
+
+worker0         IN A    192.168.0.24
+worker1         IN A    192.168.0.25

@@ -28,6 +28,14 @@ pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZG
 
 sshKey: 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBYSxOuQnppsme2Rul4CxlzFLYvN6xm88XbqebrghdEO jinsae84@naver.com'
 
+imageDigestSources:
+- source: quay.io/openshift-release-dev/ocp-release
+  mirrors:
+  - bastion.ocp.lab:8443/openshift/release-images
+- source: quay.io/openshift-release-dev/ocp-v4.0-art-dev
+  mirrors:
+  - bastion.ocp.lab:8443/openshift/release
+
 additionalTrustBundle: |
   -----BEGIN CERTIFICATE-----
   MIIE/zCCAuegAwIBAgIUW7VRtVufzfrU49m4av0CEANh2eYwDQYJKoZIhvcNAQEL

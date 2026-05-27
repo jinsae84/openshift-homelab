@@ -1,0 +1,143 @@
+apiVersion: v1alpha1
+kind: AgentConfig
+
+metadata:
+  name: paas
+
+rendezvousIP: 192.168.0.20
+
+hosts:
+  - hostname: master0.paas.ocp.lab
+    role: master
+    interfaces:
+      - name: ens34
+        macAddress: 00:0c:29:60:77:50
+    networkConfig:
+      interfaces:
+        - name: ens34
+          type: ethernet
+          state: up
+          mac-address: 00:0c:29:60:77:50
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.0.20
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.0.17
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.0.1
+            next-hop-interface: ens34
+
+  - hostname: master1.paas.ocp.lab
+    role: master
+    interfaces:
+      - name: ens34
+        macAddress: 00:0c:29:0e:c1:94
+    networkConfig:
+      interfaces:
+        - name: ens34
+          type: ethernet
+          state: up
+          mac-address: 00:0c:29:0e:c1:94
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.0.21
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.0.17
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.0.1
+            next-hop-interface: ens34
+
+  - hostname: master2.paas.ocp.lab
+    role: master
+    interfaces:
+      - name: ens34
+        macAddress: 00:0c:29:8b:72:09
+    networkConfig:
+      interfaces:
+        - name: ens34
+          type: ethernet
+          state: up
+          mac-address: 00:0c:29:8b:72:09
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.0.22
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.0.17
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.0.1
+            next-hop-interface: ens34
+
+  - hostname: worker0.paas.ocp.lab
+    role: worker
+    interfaces:
+      - name: ens34
+        macAddress: 00:0c:29:5e:54:e8
+    networkConfig:
+      interfaces:
+        - name: ens34
+          type: ethernet
+          state: up
+          mac-address: 00:0c:29:5e:54:e8
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.0.23
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.0.17
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.0.1
+            next-hop-interface: ens34
+
+  - hostname: worker1.paas.ocp.lab
+    role: worker
+    interfaces:
+      - name: ens34
+        macAddress: 00:0c:29:c7:c1:54
+    networkConfig:
+      interfaces:
+        - name: ens34
+          type: ethernet
+          state: up
+          mac-address: 00:0c:29:c7:c1:54
+          ipv4:
+            enabled: true
+            address:
+              - ip: 192.168.0.24
+                prefix-length: 24
+            dhcp: false
+      dns-resolver:
+        config:
+          server:
+            - 192.168.0.17
+      routes:
+        config:
+          - destination: 0.0.0.0/0
+            next-hop-address: 192.168.0.1
+            next-hop-interface: ens34

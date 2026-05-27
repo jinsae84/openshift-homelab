@@ -1,6 +1,6 @@
 $TTL 1W
 @       IN SOA  bastion.ocp.lab. root.ocp.lab. (
-                        2026052401 ; serial
+                        2026052702 ; serial
                         3H         ; refresh
                         30M        ; retry
                         2W         ; expiry
@@ -15,9 +15,9 @@ api-int.paas           IN A    192.168.0.17
 
 *.apps.paas            IN A    192.168.0.17
 
-master0                IN A    192.168.0.20
-master1                IN A    192.168.0.21
-master2                IN A    192.168.0.22
+master0.paas                IN A    192.168.0.20
+master1.paas                IN A    192.168.0.21
+master2.paas                IN A    192.168.0.22
 
-worker0                IN A    192.168.0.23
-worker1                IN A    192.168.0.24
+worker0.paas                IN A    192.168.0.23
+worker1.paas                IN A    192.168.0.24
